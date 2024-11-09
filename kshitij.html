@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Product Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Background Section */
+        .background {
+            background-color: #ececec; /* Light background color */
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .background h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .background p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Product Page Layout */
+        .product-page {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .product-images {
+            flex: 1;
+            min-width: 350px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-images img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Zoom functionality */
+        .zoom-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: none;
+            transition: opacity 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 350px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .price {
+            font-size: 2em;
+            color: #FF9900; /* Amazon-like orange */
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background-color: #FF9900;
+            color: white;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #e68a00;
+        }
+
+        .specifications {
+            margin-top: 30px;
+        }
+
+        .specifications ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .specifications li {
+            margin: 10px 0;
+        }
+
+        .reviews {
+            margin-top: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Related Products Section */
+        .related-products {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            margin-top: 40px;
+        }
+
+        .related-products .product-card {
+            flex: 0 0 30%;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .related-products .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-products img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-page {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-info, .product-images {
+                flex: 1 1 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Section -->
+    <div class="background">
+        <h1>IPHONE 15 PRO</h1>
+        <p>High-quality product with amazing features. Get it now at an affordable price!</p>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="container">
+        <div class="product-page">
+            <!-- Product Images -->
+            <div class="product-images" id="product-images">
+                <img src="iphone15.avif" alt="Product Image" id="main-image">
+                <div class="zoom-img" id="zoom-img"></div>
+            </div>
+
+            <!-- Product Information -->
+            <div class="product-info">
+                <h2>Product Description</h2>
+                <div class="price">₹ 99,999</div>
+                <div class="description">
+                    <p>Forged in Titanium
+                        iPhone 15 Pro is the first iPhone to feature an aerospace‑grade titanium design, using the same alloy that spacecraft use for missions to Mars. Titanium has one of the best strength‑to‑weight ratios of any metal, making these our lightest Pro models ever. You’ll notice the difference the moment you pick one up..</p>
+                </div>
+                <button class="btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Specifications Section -->
+    <div class="container specifications">
+        <h2>Product Specifications</h2>
+        <ul>
+            <li><strong>Display:</strong> All Screen OLED Display</li>
+            <li><strong>Processor:</strong> A17 Pro Chip, 6 Core Processor</li>
+            <li><strong>RAM:</strong> 6GB</li>
+            <li><strong>Storage:</strong> 128GB</li>
+            <li><strong>Camera:</strong> 48MP + 12MP Dual Rear Camera</li>
+            <li><strong>Battery:</strong> 4000mAh</li>
+            <li><strong>OS:</strong> iOS 17</li>
+        </ul>
+    </div>
+
+    <!-- Product Reviews Section -->
+    <div class="container reviews">
+        <h2>Customer Reviews</h2>
+        <p><strong>John Doe:</strong> Great product! The performance is amazing and the camera quality is top-notch. Highly recommend! <span>⭐⭐⭐⭐⭐</span></p>
+        <p><strong>Jane Smith:</strong> Very good value for money. Battery lasts all day, and the screen quality is fantastic. <span>⭐⭐⭐⭐</span></p>
+        <p><strong>Ravi Kumar:</strong> Good build quality, but the software could be improved. Still a great buy overall. <span>⭐⭐⭐⭐</span></p>
+    </div>
+
+    <!-- Related Products Section -->
+    <div class="container">
+        <h2>Related Products</h2>
+        <div class="related-products">
+            <div class="product-card">
+                <img src="mac.jpg" alt="Related Product 1">
+                <h3>Apple MacBook Air Apple M3 - (8 GB/256 GB SSD/macOS Sonoma) MRXT3HN/A  (13 Inch, Starlight, 1.24 Kg)</h3>
+                <p>₹ 115,999</p>
+            </div>
+            <div class="product-card">
+                <img src="pods.webp" alt="Related Product 2">
+                <h3>Apple AirPods Pro (2nd generation)</h3>
+                <p>₹ 18,999</p>
+            </div>
+            <div class="product-card">
+                <img src="16.jpg" alt="Related Product 3">
+                <h3>Apple iPhone 16</h3>
+                <p>₹ 82,999</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Zoom Functionality Script -->
+    <script>
+        const mainImage = document.getElementById('main-image');
+        const zoomImg = document.getElementById('zoom-img');
+
+        mainImage.addEventListener('mousemove', function(e) {
+            const x = e.offsetX;
+            const y = e.offsetY;
+
+            const zoomWidth = 150; // zoom image size
+            const zoomHeight = 150;
+
+            // Calculate background position
+            const bgPosX = (x / mainImage.offsetWidth) * 100;
+            const bgPosY = (y / mainImage.offsetHeight) * 100;
+
+            zoomImg.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+            zoomImg.style.backgroundImage = `url(${mainImage.src})`;
+            zoomImg.style.display = 'block';
+        });
+
+        mainImage.addEventListener('mouseleave', function() {
+            zoomImg.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
